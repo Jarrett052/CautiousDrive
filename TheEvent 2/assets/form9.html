@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://dl3.pushbulletusercontent.com/xEUlst4p6eJ9lEn17n29nTT54n1fyeIm/form5.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Cautious Drive</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <style>
+        .gameField {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #fff;
+            margin: 50px;
+            transition: opacity 0.2s ease, transform 0.3s ease;
+        }
+        
+        .field div {
+            background: #3b2d77;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            transition: background .3s ease;
+        }
+        
+        .section-header {
+            margin-top: 100px;
+        }
+        
+        .section-header .memoryTitle {
+            font-size: 25px;
+            color: white;
+        }
+        
+        .instruction {
+            margin-top: 10px;
+            color: #e1dfe8;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .levelDisplay {
+            margin-top: 10px;
+            color: #e1dfe8;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .gameField {
+            /* transform: scale(0.8); */
+            margin: 0 auto;
+        }
+        
+        .gameField .field {
+            align-items: center;
+        }
+        
+        @media (max-width: 460px) {
+            .section-header .memoryTitle {
+                font-size: 20px;
+                color: white;
+            }
+            .gameField {
+                transform: scale(0.8) translateX(-19%);
+            }
+            /* .gameField .field {
+                transform: scale(0.8);
+            } */
+            .instruction {
+                margin-top: 10px;
+                color: #e1dfe8;
+                font-size: 18px;
+                text-align: center;
+            }
+            .levelDisplay {
+                margin-top: 10px;
+                color: #e1dfe8;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        /* CODE FOR CUSTOM SCROLLBAR */
+        /*
+ *  STYLE 2
+ */
+        
+        #style-2::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        
+        #style-2::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+        
+        #style-2::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #D62929;
+        }
+    </style>
+
+
+    <!-- Favicons -->
+    <link href="https://dl3.pushbulletusercontent.com/xEUlst4p6eJ9lEn17n29nTT54n1fyeIm/img/favicon1.png" rel="icon">
+    <link href="https://dl3.pushbulletusercontent.com/xEUlst4p6eJ9lEn17n29nTT54n1fyeIm/img/apple-touch-icon1.png" rel="apple-touch-icon">
+
+
+
+    <!-- Google Fonts -->
+    <link href="./form5_files/css" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./form5_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./form5_files/animate.min.css" rel="stylesheet">
+    <link href="./form5_files/venobox.css" rel="stylesheet">
+    <link href="./form5_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./form5_files/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./form5_files/style.css" rel="stylesheet">
+    <link href="./form5_files/memoryTest.css" rel="stylesheet">
+    <script src="./form5_files/jquery.min.js.download"></script>
+
+
+    <!-- BOOTSTRAP-->
+    <link rel="stylesheet" href="./form5_files/bootstrap.min(1).css">
+    <script src="./form5_files/jquery.min.js.download"></script>
+    <script src="./form5_files/bootstrap.min.js.download"></script>
+    <!-- BOOTSTRAP-->
+
+
+</head>
+
+<body style="background-image: url(./img/taxiBg.jpg); background-size:cover">
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+
+                <a href="https://dl3.pushbulletusercontent.com/home.html" class="scrollto"><img src="./form5_files/logo1.png" alt="" title=""></a>
+            </div>
+
+
+
+        </div>
+    </header>
+    <!-- End Header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="section-header" style="margin-left: 25%;">
+                    <p class="memoryTitle">Test your Memory !</p>
+                </div>
+
+                <div id="style-2" style="margin-left: 25%;">
+                    <div class="instruction" id="instruction"> Remember the yellow color cell and click corresponding cell to test your memory.</div>
+                    <div class="levelDisplay" id="testLevel"></div>
+                    <p id="gameInstruction" style="text-align: center; font-size: 20px; color: white;display:none;"> You get 3 chances for each level. </p>
+                </div>
+                <div style="margin-bottom: 20px; margin-top: 10vh; text-align: center;margin-left: 25%;">
+                    <button onclick="click_one()" class="btn btn-danger" style="border-radius:20px;" id="startGame"> Ok!</button>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="gameField">
+                    <div class="field" id="cellField" style="opacity: 0.1;"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        var cellSetting = [{
+            "cellCount": 3,
+            "memoryCount": 3,
+            "fieldSize": 300,
+            "space": 1
+        }, {
+            "cellCount": 4,
+            "memoryCount": 3,
+            "fieldSize": 300,
+            "space": 1
+        }, {
+            "cellCount": 4,
+            "memoryCount": 4,
+            "fieldSize": 300,
+            "space": 1
+        }, {
+            "cellCount": 5,
+            "memoryCount": 4,
+            "fieldSize": 300,
+            "space": 1
+        }, {
+            "cellCount": 5,
+            "memoryCount": 5,
+            "fieldSize": 350,
+            "space": 1
+        }, {
+            "cellCount": 5,
+            "memoryCount": 6,
+            "fieldSize": 350,
+            "space": 1
+        }, {
+            "cellCount": 5,
+            "memoryCount": 6,
+            "fieldSize": 350,
+            "space": 1
+        }, {
+            "cellCount": 5,
+            "memoryCount": 7,
+            "fieldSize": 350,
+            "space": 1
+        }, {
+            "cellCount": 6,
+            "memoryCount": 7,
+            "fieldSize": 360,
+            "space": 1
+        }, {
+            "cellCount": 6,
+            "memoryCount": 8,
+            "fieldSize": 360,
+            "space": 1
+        }, {
+            "cellCount": 6,
+            "memoryCount": 9,
+            "fieldSize": 360,
+            "space": 1
+        }, {
+            "cellCount": 6,
+            "memoryCount": 10,
+            "fieldSize": 360,
+            "space": 1
+        }];
+
+        //Default setting;
+        var fieidDiv = document.getElementById("cellField");
+        var level = 0;
+        var finalResult = 0;
+        var resultSent = 0;
+        var cellCount = 3;
+        var memoryCount = 3;
+        var fieldSize = 300;
+        var totCellCount = 3 * 3;
+        var correctGuess = 0;
+        var wrongAttempt = 0;
+        var correctAttempt = 0;
+        var cellSize = fieldSize / cellCount;
+        var cellsIndexes = [...Array(9)].map((_, i) => i);
+        var field = [...cellsIndexes].fill(1);
+        levelConfig();
+        var innerDiv;
+        var hiddenCells = [];
+
+
+
+        document.getElementById("cellField").style.opacity = "0.1";
+
+        function myFunction() {
+            var startGame = document.getElementById("startGame");
+            startGame.remove();
+            var gameInstruction = document.getElementById("gameInstruction");
+            gameInstruction.remove();
+            //document.getElementById("instruction").innerHTML = "Green cell represent correct, red celll means wrong guess, if you can not remember, you can click any cell"
+            document.getElementById("cellField").style.opacity = "1";
+            generateGame();
+        }
+
+        function click_one() {
+            console.log("click1");
+            var instruction = document.getElementById("instruction");
+            instruction.hidden = true;
+            //instruction.innerHTML= 'You get 3 chances for each level.';
+            var gameInstruction = document.getElementById("gameInstruction");
+            gameInstruction.style.display = "block";
+            var btn = document.getElementById("startGame");
+            btn.setAttribute('onclick', 'click_two()');
+
+        }
+
+        function click_two() {
+            console.log("click2");
+            var gameInstruction = document.getElementById("gameInstruction");
+            gameInstruction.innerHTML = '';
+            gameInstruction.innerHTML = 'It is required to attempt 2/3 responses correctly on every level to progress to next level.';
+            var btn = document.getElementById("startGame");
+            btn.setAttribute('onclick', 'myFunction()');
+            btn.innerText = "Let's Start!";
+        }
+
+        function generateGame() {
+            fieidDiv.innerHTML = "";
+            for (var i = 0; i < totCellCount; i++) {
+                innerDiv = document.createElement('div');
+                innerDiv.addEventListener("click", changeColor);
+                innerDiv.id = i;
+                fieidDiv.appendChild(innerDiv);
+            }
+            finalResult = level + 1;
+            generateGuess();
+            document.getElementById("testLevel").innerHTML = "Your current level is: " + finalResult + "/7";
+        }
+        //generateGame();
+
+        function changeColor() {
+            var clickItem = Number(this.id);
+            var resetWrong = this.id;
+            var conditionCheck = hiddenCells.indexOf(clickItem);
+            if (conditionCheck < 0) {
+                this.style.background = "red";
+                setTimeout(function() {
+                    resetColor();
+                }, 1400);
+                //correctGuess = 0;
+                wrongAttempt = wrongAttempt + 1;
+                if (wrongAttempt > 1) {
+                    //////////////////// Here is direct to next page //////////
+                    setTimeout(function() {
+                        window.location.href = "./resultM.html";
+                    }, 1000);
+                    ////////////////////modify here/////////////////////////
+                    resultSent = finalResult;
+                    localStorage.setItem("level", resultSent);
+                    level = 0;
+                    setTimeout(function() {
+                        updateLevel();
+                        generateGuess();
+                    }, 2000);
+                } else {
+                    setTimeout(function() {
+                        generateGuess();
+                    }, 2000);
+                }
+
+            } else {
+                this.style.background = "#95C8B9";
+                correctGuess = correctGuess + 1;
+                if (correctGuess == memoryCount) {
+                    correctGuess = 0;
+                    correctAttempt = correctAttempt + 1;
+                    if (correctAttempt > 1) {
+                        level = level + 1;
+                        if (level > 6) {
+                            setTimeout(function() {
+                                window.location.href = "./resultM.html";
+                            }, 1000);
+                            ////////////////////modify here/////////////////////////
+                            resultSent = finalResult;
+                            localStorage.setItem("level", resultSent);
+                        } else {
+                            hiddenCells = [];
+                            setTimeout(function() {
+                                resetColor();
+                                updateLevel();
+                            }, 1000);
+                        }
+                    } else {
+                        setTimeout(function() {
+                            generateGuess();
+                        }, 2000);
+                    }
+                }
+            }
+        }
+        ///////////////////////////////////////////////////////////
+        function generateGuess() {
+            hiddenCells = [];
+            cellsIndexes = [];
+            cellsIndexes = [...Array(cellCount * cellCount)].map((_, i) => i);
+            field = [...cellsIndexes].fill(1);
+            resetColor();
+            for (var a = 0; a < memoryCount; a++) {
+                var rNum = Math.floor(Math.random() * cellsIndexes.length);
+                var toChange = cellsIndexes.splice(rNum, 1).pop();
+                hiddenCells.push(toChange);
+                field[toChange] = 2;
+            }
+            for (var b = 0; b < memoryCount; b++) {
+                var index = hiddenCells[b];
+                // document.getElementById(index).style.background = "#95C8B9";
+                document.getElementById(index).style.background = "#b09527";
+
+            }
+            setTimeout(function() {
+                resetColor();
+            }, 1400);
+        }
+
+        function updateLevel() {
+            levelConfig();
+            correctAttempt = 0;
+            wrongAttempt = 0;
+            var setFieldSize = fieldSize + 5 * cellCount;
+            var setCellSize = fieldSize / cellCount;
+            // var ggg = document.styleSheets[0].cssRules[2].cssText;
+            var fieldDeclaration = document.styleSheets[0].cssRules[1].style;
+            var cellDeclaration = document.styleSheets[0].cssRules[2].style;
+            // document.getElementById("testLevel").innerHTML = ggg
+            var fieldWidth = setFieldSize + 'px'
+            var cellWidth = setCellSize + 'px'
+            fieldDeclaration.setProperty('width', fieldWidth, "important");
+            fieldDeclaration.setProperty('height', fieldWidth, "important");
+            cellDeclaration.setProperty('width', cellWidth, "important");
+            cellDeclaration.setProperty('height', cellWidth, "important");
+            generateGame();
+
+        }
+
+        function levelConfig() {
+            switch (level) {
+                case 0:
+                    cellCount = cellSetting[0].cellCount;
+                    memoryCount = cellSetting[0].memoryCount;
+                    fieldSize = cellSetting[0].fieldSize;
+                    break;
+                case 1:
+                    cellCount = cellSetting[1].cellCount;
+                    memoryCount = cellSetting[1].memoryCount;
+                    fieldSize = cellSetting[1].fieldSize;
+                    break;
+                case 2:
+                    cellCount = cellSetting[2].cellCount;
+                    memoryCount = cellSetting[2].memoryCount;
+                    fieldSize = cellSetting[2].fieldSize;
+                    break;
+                case 3:
+                    cellCount = cellSetting[3].cellCount;
+                    memoryCount = cellSetting[3].memoryCount;
+                    fieldSize = cellSetting[3].fieldSize;
+                    break;
+                case 4:
+                    cellCount = cellSetting[4].cellCount;
+                    memoryCount = cellSetting[4].memoryCount;
+                    fieldSize = cellSetting[4].fieldSize;
+                    break;
+                case 5:
+                    cellCount = cellSetting[5].cellCount;
+                    memoryCount = cellSetting[5].memoryCount;
+                    fieldSize = cellSetting[5].fieldSize;
+                    break;
+                case 6:
+                    cellCount = cellSetting[6].cellCount;
+                    memoryCount = cellSetting[6].memoryCount;
+                    fieldSize = cellSetting[6].fieldSize;
+                    break;
+                case 7:
+                    cellCount = cellSetting[7].cellCount;
+                    memoryCount = cellSetting[7].memoryCount;
+                    fieldSize = cellSetting[7].fieldSize;
+                    break;
+                case 8:
+                    cellCount = cellSetting[8].cellCount;
+                    memoryCount = cellSetting[8].memoryCount;
+                    fieldSize = cellSetting[8].fieldSize;
+                    break;
+                case 9:
+                    cellCount = cellSetting[9].cellCount;
+                    memoryCount = cellSetting[9].memoryCount;
+                    fieldSize = cellSetting[9].fieldSize;
+                    break;
+                case 10:
+                    cellCount = cellSetting[10].cellCount;
+                    memoryCount = cellSetting[10].memoryCount;
+                    fieldSize = cellSetting[10].fieldSize;
+                    break;
+                case 11:
+                    cellCount = cellSetting[11].cellCount;
+                    memoryCount = cellSetting[11].memoryCount;
+                    fieldSize = cellSetting[11].fieldSize;
+                    break;
+            }
+            totCellCount = cellCount * cellCount;
+            cellsIndexes = [];
+            field = [];
+            cellsIndexes = [...Array(totCellCount)].map((_, i) => i);
+            field = [...cellsIndexes].fill(1);
+        }
+
+        function resetColor() {
+            for (var c = 0; c < field.length; c++) {
+                document.getElementById(c).style.background = "#3B2D77";
+            }
+        }
+    </script>
+    <!-- ///////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+</body>
+
+</html>

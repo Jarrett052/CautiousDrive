@@ -1,0 +1,29 @@
+.gameField {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 500px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    width: 315px;
+    height: 315px;
+    margin: 50px;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.field div {
+    background: #3b2d77;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    transition: background .3s ease;
+}

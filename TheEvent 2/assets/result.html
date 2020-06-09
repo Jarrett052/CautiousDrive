@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+​
+
+<head>
+    ​
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"> ​
+    <title>Cautious Drive</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <style>
+        ​ #style-2::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        
+        ​ #style-2::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+        
+        ​ #style-2::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #D62929;
+        }
+        
+        ​ ​ ​
+        /* Chccklist css*/
+        
+        ​ .form-group input[type="checkbox"] {
+            display: none;
+        }
+        
+        ​ .form-group input[type="checkbox"]+.btn-group>label span {
+            width: 20px;
+        }
+        
+        ​ .form-group input[type="checkbox"]+.btn-group>label span:first-child {
+            display: none;
+        }
+        
+        ​ .form-group input[type="checkbox"]+.btn-group>label span:last-child {
+            display: inline-block;
+        }
+        
+        ​ .form-group input[type="checkbox"]:checked+.btn-group>label span:first-child {
+            display: inline-block;
+        }
+        
+        ​ .form-group input[type="checkbox"]:checked+.btn-group>label span:last-child {
+            display: none;
+        }
+        /* //////////////////////////////////////////////////// */
+        
+        .modal {
+            transform: scale(0.7);
+        }
+        
+        .modal-header {
+            background-color: #9aa3ac
+        }
+        
+        .inputGroup {
+            background-color: #fff;
+            display: block;
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .inputGroup label {
+            padding: 12px 30px;
+            width: 100%;
+            display: block;
+            text-align: left;
+            color: #3c454c;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: color 200ms ease-in;
+            overflow: hidden;
+        }
+        
+        .inputGroup label:before {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            content: '';
+            background-color: #5562eb;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .inputGroup label:after {
+            width: 32px;
+            height: 32px;
+            content: '';
+            border: 2px solid #d1d7dc;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+            background-repeat: no-repeat;
+            background-position: 2px 3px;
+            border-radius: 50%;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+        
+        .inputGroup input:checked~label {
+            color: #fff;
+        }
+        
+        .inputGroup input:checked~label:before {
+            transform: translate(-50%, -50%) scale3d(56, 56, 1);
+            opacity: 1;
+        }
+        
+        .inputGroup input:checked~label:after {
+            background-color: #54e0c7;
+            border-color: #54e0c7;
+        }
+        
+        .inputGroup input {
+            width: 32px;
+            height: 32px;
+            order: 1;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            visibility: hidden;
+        }
+        
+        .form {
+            padding: 0 16px;
+            max-width: 550px;
+            margin: 50px auto;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 36px;
+        }
+        
+        body {
+            /* background-color: #d1d7dc; */
+            background: url(./img/taxiBg.jpg);
+            font-family: 'Fira Sans', sans-serif;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        code {
+            background-color: #9aa3ac;
+            padding: 0 8px;
+        }
+    </style>
+    ​ ​
+    <!-- Favicons -->
+    <link href="./img/favicon1.png" rel="icon">
+    <link href="./img/apple-touch-icon1.png" rel="apple-touch-icon"> ​ ​ ​
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> ​
+    <!-- Vendor CSS Files -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="./vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet"> ​
+    <!-- Template Main CSS File -->
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/memoryTest.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    ​ ​
+    <!-- BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- BOOTSTRAP-->
+
+
+    ​ ​
+</head>
+​
+
+<!-- <body style="background-image: url(./img/taxiBg3.jpg); background-size:cover; " onload="getHere()"> -->
+
+<body style="background:black; background-size:cover; " onload="getHere()"> ​
+    <header id="header">
+        <div class="container">
+            ​
+            <div id="logo" class="pull-left">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <!-- <h1><a href="#intro">The<span>Event</span></a></h1>-->
+                <a href="../index.html" class="scrollto"><img src="./img/logo1.png" alt="" title=""></a>
+            </div>
+            ​
+            <nav id="nav-menu-container">
+                <ul class="nav-menu" style="font-size: 30px;">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../assets/navi.html">Test Result</a></li>
+                    <li><a href="../assets/information.html">Information</a></li>
+                    <li><a href="../assets/abt.html">About The Test</a></li>
+                    ​ ​ ​
+                </ul>
+            </nav>
+            ​
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <div class="container-fluid" style="margin-top: 15vh;">
+        <div class="section-header">
+            <p>Results</p>
+        </div>
+        <!-- <div style="text-align: center;">
+            <div class="card" style="text-align: center;    width: 60%;">
+​
+                <div class="card-body">
+                    <h5 class="card-title">Please check these things while your results are loading!</h5>
+​
+                    <div class="[ col-xs-12 col-sm-6 ]">
+​
+                        <hr />
+                        <div class="[ form-group ]">
+                            <input type="checkbox" name="fancy-checkbox-default-custom-icons"
+                                id="fancy-checkbox-default-custom-icons" autocomplete="off" />
+                            <div class="[ btn-group ]">
+                                <label for="fancy-checkbox-default-custom-icons" class="[ btn btn-default ]">
+                                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                                </label>
+                                <label for="fancy-checkbox-default-custom-icons" class="[ btn btn-default active ]">
+                                    Default Checkbox
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+​
+                    <a href="#" class="btn btn-primary">Close</a>
+                </div>
+            </div>
+​
+        </div> -->
+
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+
+                        <h4 class="modal-title" style="margin-left:30%">Cautious Drive</h4>
+                        <button type="button" class="close" data-dismiss="modal"> </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form class="form">
+
+                            <!-- <h4 class="subscribe1">Please check following item if you have done before your journey !!!</h4> -->
+                            <div class="inputGroup" style="margin-top:20px">
+                                <input id="option1" name="option1" type="checkbox" />
+                                <label for="option1">Grab a coffee</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="option2" name="option2" type="checkbox" />
+                                <label for="option2">Charge mobile phone</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="option3" name="option3" type="checkbox" />
+                                <label for="option3">Tyres examination</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="option4" name="option4" type="checkbox" />
+                                <label for="option4">Phone charger</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="option5" name="option5" type="checkbox" />
+                                <label for="option5">Driving license</label>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-right: 45%;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+
+                setTimeout(function() {
+                    //            $('#myModal').modal('show');
+                    //            $("#myModal").modal();
+                    $("#myModal").modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                }, 1000); // milliseconds
+            });
+        </script>
+
+
+        ​
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+            <div class="col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+                <span class="material-icons" style="color:#48b461;  visibility: hidden; font-size: 12vh;" id="iconThumbsUp">
+                    thumb_up_alt
+                </span>
+                <span class="material-icons" style="color: #ffca2c;  visibility: hidden; font-size: 12vh;" id="iconWarning">
+                    warning
+                </span>
+                <span class="material-icons" style="color: #dc3545; visibility: hidden; font-size: 12vh;" id="iconError">
+                    error
+                </span>
+                <div class="progress" style=" visibility: hidden;" id="lowFatigueBar">
+                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress" style=" visibility: hidden;" id="mediumFatigueBar">
+                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 60% " aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                ​
+                <div class="progress" style=" visibility: hidden;" id="highFatigueBar">
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 100%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                ​
+                <!-- <p id="results"></p>
+                <p id="tile" style="color: white;"></p>
+                <p id="timeee" style="color: white;"></p> -->
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+        </div>
+        <div class="resultText" id="resultText">
+            <div id="results" style="text-align: center; font-size: 20px; color: #fff; margin-top: -5%;">Please wait for a while to get your result, while waiting check the list !!!</div>
+            <div id="tile" style="color: white; text-align: center; font-size: 20px"></div>
+            <div id="timeee" style="color: white; text-align: center; font-size: 20px"></div>
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="./vendor/php-email-form/validate.js"></script>
+    <script src="./vendor/wow/wow.min.js"></script>
+    <script src="./vendor/venobox/venobox.min.js"></script>
+    <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./vendor/superfish/superfish.min.js"></script>
+    <script src="./vendor/hoverIntent/hoverIntent.js"></script>
+
+
+    ​ ​
+    <script src="./js/main.js"></script>
+    <script>
+        function goToHomePage() {
+            window.open("../index.html", "_self");
+        }
+
+        function getHere() {
+
+            var regnumber = localStorage.getItem("reg");
+
+            var responses = localStorage.getItem("resT");
+
+            var noOfResponses = localStorage.getItem("occur");
+
+            var corsi = localStorage.getItem("level");
+
+            var send = JSON.stringify({
+                "corsi": corsi,
+                "regnumber": regnumber,
+                "responses": responses,
+                "noOfResponses": noOfResponses
+            });
+            //console.log(send);
+            $.ajax({
+                contentType: 'application/json',
+                data: send,
+                dataType: 'json',
+
+
+                type: 'POST',
+                url: 'https://tcha0054.pythonanywhere.com/fatiguetest/',
+                success: function(data) {
+
+                    var res = data["response"]; // create an object with the key of the array
+                    document.getElementById("results").innerHTML = res;
+                    //localStorage.setItem("result", res);
+
+                    var tile = data["percentile"]; // create an object with the key of the array
+                    document.getElementById("tile").innerHTML = tile;
+                    //localStorage.setItem("percentile", tile);
+
+                    var timee = data["validity"]; // create an object with the key of the array
+                    document.getElementById("timeee").innerHTML = timee;
+                    // localStorage.setItem("time", timee);
+
+                    var label1 = data["label"];
+                    if (label1 == 0) {
+                        document.getElementById("results").style.color = "#1aff1a";
+                        document.getElementById("iconThumbsUp").style.visibility = "visible";
+                        document.getElementById("lowFatigueBar").style.visibility = "visible";
+                        document.getElementById("lowFatigueBar").style.marginTop = "-2%";
+                        document.getElementById("resultText").style.marginTop = "-14%";
+                    } else if (label1 == 1) {
+                        document.getElementById("results").style.color = "#fff01a";
+                        document.getElementById("iconWarning").style.visibility = "visible";
+                        document.getElementById("mediumFatigueBar").style.visibility = "visible";
+                        document.getElementById("mediumFatigueBar").style.marginTop = "-10%";
+                        document.getElementById("resultText").style.marginTop = "-10%"
+                    } else if (label1 == 2) {
+                        document.getElementById("results").style.color = "#f50000";
+                        document.getElementById("iconError").style.visibility = "visible";
+                        document.getElementById("highFatigueBar").style.visibility = "visible";
+                        document.getElementById("highFatigueBar").style.marginTop = "-20%";
+                    }
+
+
+
+                },
+                error: function(data) {
+
+                    var json = data["response"];
+                    alert(json);
+                },
+            });
+            //console.log("sending");
+            // var resultt = localStorage.getItem("result");
+            // var where = localStorage.getItem("percentile");
+            // var when = localStorage.getItem("time");
+
+
+
+        }
+    </script>
+    ​ ​ ​
+</body>
+​
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Cautious Drive</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./img/favicon1.png" rel="icon">
+    <link href="./img/apple-touch-icon1.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="./vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/reaction.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+
+                <a href="../index.html" class="scrollto"><img src="./img/logo1.png" alt="" title=""></a>
+            </div>
+
+
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <section id="subscribe4">
+            <div class="container wow fadeInUp">
+                <div class="section-header" style="margin-top: 50px;">
+                    <!-- <h2>Welcome</h2> -->
+                    <div id="reactionTitle" class="reactionTitle">
+                        <p>Test your reaction time !</p>
+                        <!-- <h2>Test your reaction time !</h2> -->
+                    </div>
+                    <div id="timeConuter" class="timeConuter">
+                        <div id="timer" style="font-weight:500;"> </div>
+                    </div>
+                </div>
+
+
+
+                <!-- <p class="fontSetting">Click on the boxes and circles as quickly as you can. Your reaction time will be recorded </p> -->
+                <div class="container1" id="container1">
+                    <!-- <div class="container1" id="container1" style="margin-left: 330px;">     -->
+                    <div class="tab-slider--nav">
+                        <ul class="tab-slider--tabs">
+                            <li class="tab-slider--trigger active" rel="tab1">Rules</li>
+                            <li class="tab-slider--trigger" rel="tab2">Tips</li>
+                        </ul>
+                    </div>
+                    <div class="tab-slider--container">
+                        <div id="tab1" class="tab-slider--body">
+                            <!-- <h2>Rules</h2> -->
+
+                            <p>Click on the boxes and circles when it appears. </br>Your reaction time will be recorded, click TIPS </br>to continue.
+                            </p>
+                        </div>
+                        <div id="tab2" class="tab-slider--body">
+                            <!-- <h2>Tips</h2> -->
+                            <p>The position of boxes and circles will the same place. But it will appear randomly based on the </br> time, click the boxes and circles as quick as you</br> can.</p>
+                            <button onclick="myFunction()" id="startButton" class="btn btn-danger" style="border-radius:20px; width: 80px;">Start</button>
+                            <!-- <button onclick="myFunction()" id="startButton" class="btn btn-danger" style="margin-left: 40%; margin-bottom: 20px; border-radius:20px; width: 80px;">Start</button> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <p id="printReactionTime" style="font-size: 20px; color:white; text-align: center;"></p>
+                </br>
+                <!-- <p id="printReactionTime" style="padding-top: 50px; font-size:20px; padding-left:5px"></p> </br> -->
+                <!-- <button style="display: flex; align-items: center;"> Start </button> -->
+                <!-- <button onclick="myFunction()" id="startButton" class="btn btn-danger" style="margin-left: 45%; margin-bottom: 20px; border-radius:20px; width: 80px;">Start</button> -->
+
+                <div class="centerBox">
+                    <div id="box" class="box"></div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+        </section>
+        <!-- End Subscribe Section -->
+
+        <!-- End  F.A.Q Section -->
+
+    </main>
+
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="./vendor/php-email-form/validate.js"></script>
+    <script src="./vendor/wow/wow.min.js"></script>
+    <script src="./vendor/venobox/venobox.min.js"></script>
+    <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./vendor/superfish/superfish.min.js"></script>
+    <script src="./vendor/hoverIntent/hoverIntent.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./js/main.js"></script>
+    <script src="./js/reaction.js"></script>
+
+    <script>
+        $("document").ready(function() {
+            $(".tab-slider--body").hide();
+            $(".tab-slider--body:first").show();
+        });
+        $(".tab-slider--nav li").click(function() {
+            $(".tab-slider--body").hide();
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn();
+            if ($(this).attr("rel") == "tab2") {
+                $('.tab-slider--tabs').addClass('slide');
+            } else {
+                $('.tab-slider--tabs').removeClass('slide');
+            }
+            $(".tab-slider--nav li").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+
+
+
+</body>
+
+</html>

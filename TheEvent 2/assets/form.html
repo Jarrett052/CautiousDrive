@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Cautious Drive</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./img/favicon1.png" rel="icon">
+    <link href="./img/apple-touch-icon1.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="./vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+
+                <a href="../index.html" class="scrollto"><img src="./img/logo1.png" alt="" title=""></a>
+            </div>
+
+
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <section id="subscribe1">
+            <div class="container wow fadeInUp" style="margin-top: 90px;">
+                <div class="section-header">
+                    <h2>Welcome</h2>
+                    <p style="font-size: 20px;">Enter your taxi registration number.</p>
+                </div>
+
+
+                <div class="form-row justify-content-center" style="margin-left: 12%;">
+
+                    <div class="col-auto">
+                        <input type="text" class="form-control" placeholder="Enter your Taxi Registration Number (eg. RAX123)" id="usrName">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" onclick="gotoForm2()">Next</button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </section>
+        <!-- End Subscribe Section -->
+
+        <!-- End  F.A.Q Section -->
+
+    </main>
+
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="./vendor/php-email-form/validate.js"></script>
+    <script src="./vendor/wow/wow.min.js"></script>
+    <script src="./vendor/venobox/venobox.min.js"></script>
+    <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./vendor/superfish/superfish.min.js"></script>
+    <script src="./vendor/hoverIntent/hoverIntent.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./js/main.js"></script>
+
+    <script>
+        function gotoForm2() {
+            var nameByUser = document.getElementById('usrName').value.trim();
+            //console.log(nameByUser);
+            if (nameByUser.trim() == "") {
+                alert("Registration number must be filled out");
+                return false;
+
+            } else {
+
+                if (/^(?=.*\d)(?=.*[A-Z])[A-Z0-9]{6}$/.test(nameByUser)) {
+                    localStorage.setItem("reg", nameByUser);
+                    window.open("./form2.html", "_self");
+
+                } else {
+                    alert("Registration number should be 6 character (Capitals and numbers eg. RAX123)");
+                }
+
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

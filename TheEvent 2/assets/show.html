@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Cautious Drive</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./img/favicon1.png" rel="icon">
+    <link href="./img/apple-touch-icon1.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="./vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body onload=askResHere()>
+
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <!-- <h1><a href="#intro">The<span>Event</span></a></h1>-->
+                <a href="../index.html" class="scrollto"><img src="./img/logo1.png" alt="" title=""></a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../assets/navi.html">Test Result</a></li>
+                    <li><a href="../assets/information.html">Information</a></li>
+                    <li><a href="../assets/abt.html">About The Test</a></li>
+                    <!-- <li><a href="#venue">Venue</a></li>
+          <li><a href="#hotels">Hotels</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#supporters">Sponsors</a></li> 
+          <li><a href="#contact">Contact</a></li> 
+          <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
+
+
+                </ul>
+            </nav>
+            <!--#nav-menu-container-->
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <section id="subscribe" class="wow fadeInUp">
+
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Results of your driver are</h2>
+                </div>
+                <div>
+                    <p id="result"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact us</h4>
+                        <p>
+                            <!-- We are a team of 5 members studying in <strong>Monash University</strong> <br> Mansi Pandya<br> Liwei Xu <br> Xiaofan Zhou <br> Tanvi Chandwani <br> Chensheng Zhuo <br> -->
+                            cautiousdrive@gmail.com
+                        </p>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright" style="opacity: 0.00001;">
+                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+            </div>
+            <div class="credits" style="opacity: 0.00001;">
+                <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+            -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="./vendor/php-email-form/validate.js"></script>
+    <script src="./vendor/wow/wow.min.js"></script>
+    <script src="./vendor/venobox/venobox.min.js"></script>
+    <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./vendor/superfish/superfish.min.js"></script>
+    <script src="./vendor/hoverIntent/hoverIntent.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./js/main.js"></script>
+
+    <script>
+        function askResHere() {
+
+            var resultt1 = localStorage.getItem("driverResult");
+            // var when = localStorage.getItem("timevalid");
+            //console.log(resultt1);
+
+            document.getElementById("result").innerHTML = resultt1;
+            // document.getElementById("time").innerHTML = where;
+        }
+    </script>
+
+</body>
+
+</html>
